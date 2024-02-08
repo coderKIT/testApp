@@ -16,7 +16,7 @@ public class Service {
     @Autowired
     private JavaMailSender mailSender;
 
-    @Autowired
+    @Autowired(required = false)
     private CourseDTO courseDTO;
     String line = "";
 
@@ -53,6 +53,6 @@ public class Service {
         message.setText("Your CSV file has successfully uploaded!");
 
         this.mailSender.send(message);
-        System.out.println("MAIL CREATED");
+        System.out.println("MAIL SENT");
     }
 }
